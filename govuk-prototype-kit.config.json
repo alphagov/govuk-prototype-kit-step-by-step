@@ -1,0 +1,10 @@
+{
+  "sass": [
+    "/sass/_step-by-step-header.scss",
+    "/sass/_step-by-step-nav.scss",
+    "/sass/_step-by-step-related.scss"
+  ],
+  "scripts": [
+    "/javascripts/step-by-step-nav.js"
+  ]
+}
