@@ -1,10 +1,11 @@
 {
   "sass": [
-    "/sass/_step-by-step-header.scss",
-    "/sass/_step-by-step-nav.scss",
-    "/sass/_step-by-step-related.scss"
+    "/sass/_step-by-step-navigation.scss",
+    "/sass/_step-by-step-navigation-header.scss",
+    "/sass/_step-by-step-navigation-related.scss"
   ],
   "scripts": [
-    "/javascripts/step-by-step-nav.js"
+    "/javascripts/step-by-step-navigation.js",
+    "/javascripts/step-by-step-polyfills.js"
   ]
 }
