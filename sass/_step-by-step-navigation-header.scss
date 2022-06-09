@@ -1,4 +1,4 @@
-// Based on https://github.com/alphagov/govuk_publishing_components/blob/v27.4.0/app/assets/stylesheets/govuk_publishing_components/components/_step-by-step-nav-header.scss
+// Based on https://github.com/alphagov/govuk_publishing_components/blob/v29.11.0/app/assets/stylesheets/govuk_publishing_components/components/_step-by-step-nav-header.scss
 // Note - this code for prototype purposes only. It is not production code.
 
 .app-step-nav-header {
@@ -10,7 +10,6 @@
   background: govuk-colour("light-grey", $legacy: "grey-4");
   border-bottom: solid 1px govuk-colour("blue");
   margin-top: govuk-spacing(3);
-  border-top: none; // Explicitly overrides old value
 
   @include govuk-media-query($from: tablet) {
     padding: govuk-spacing(5);
@@ -20,5 +19,4 @@
 .app-step-nav-header__part-of {
   @include govuk-font(19, $weight: bold);
   display: block;
-  padding-bottom: 0px; // Explicitly overrides old value
 }

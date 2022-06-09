@@ -1,4 +1,4 @@
-// Based on https://github.com/alphagov/govuk_publishing_components/blob/v27.4.0/app/assets/stylesheets/govuk_publishing_components/components/_step-by-step-nav.scss
+// Based on https://github.com/alphagov/govuk_publishing_components/blob/v29.11.0/app/assets/stylesheets/govuk_publishing_components/components/_step-by-step-nav.scss
 // Note - this code for prototype purposes only. It is not production code.
 
 $stroke-width: 1px;
@@ -6,7 +6,7 @@ $number-circle-size: 30px;
 $number-circle-size-large: 35px;
 $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 
-@mixin step-nav-vertical-line ($line-style: solid) {
+@mixin step-nav-vertical-line($line-style: solid) {
   content: "";
   position: absolute;
   z-index: 2;
@@ -24,7 +24,6 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 @mixin step-nav-line-position-large {
   left: 0;
   margin-left: govuk-em(($number-circle-size-large / 2) - ($stroke-width / 2), 16);
-  border-width: $stroke-width; // explicitly overrides old value
 }
 
 // custom mixin as govuk-font does undesirable things at different breakpoints
@@ -65,7 +64,54 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 
 .app-step-nav__controls {
   padding: 3px 3px 0 0;
-  text-align: left; // explicitly overrides old value
+}
+
+.app-step-nav____title-text-focus {
+  margin-bottom: 13px;
+  display: inline-block;
+}
+
+// Create Chevron icon aligned with text
+.app-step-nav__chevron {
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  // Set size using rems to make the icon scale with text if user resizes text in their browser
+  width: govuk-px-to-rem(20px);
+  height: govuk-px-to-rem(20px);
+  border: govuk-px-to-rem(1px) solid;
+  border-radius: 50%;
+
+  vertical-align: text-top;
+
+  // Reduce size, alter alignment
+  .app-step-nav--large & {
+    vertical-align: top;
+  }
+
+  // Create inner chevron arrow
+  &:after {
+    content: "";
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    bottom: govuk-px-to-rem(5px);
+    left: govuk-px-to-rem(6px);
+    width: govuk-px-to-rem(6px);
+    height: govuk-px-to-rem(6px);
+    -webkit-transform: rotate(-45deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+    -ms-transform: rotate(-45deg); /* IE 9 */
+    transform: rotate(-45deg);
+    border-top: govuk-px-to-rem(2px) solid;
+    border-right: govuk-px-to-rem(2px) solid;
+  }
+}
+
+// Rotate icon to create "Down" version
+.app-step-nav__chevron--down {
+  -webkit-transform: rotate(180deg); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+  -ms-transform: rotate(180deg); /* IE 9 */
+  transform: rotate(180deg);
 }
 
 .app-step-nav__button {
@@ -75,8 +121,43 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
   border: 0;
   margin: 0;
 
+  &:hover {
+    background: govuk-colour("light-grey");
+    // Chevron icon interaction states
+    .app-step-nav__chevron {
+      color: govuk-colour("black");
+      background: govuk-colour("black");
+    }
+
+    .app-step-nav__chevron:after {
+      color: govuk-colour("light-grey");
+    }
+
+    .app-step-nav__button-text {
+      color: $govuk-text-colour;
+    }
+  }
+
   &:focus {
-    @include govuk-focused-text;
+    outline: 0;
+    // Chevron icon interaction states
+    .app-step-nav__chevron {
+      color: govuk-colour("black");
+      background: govuk-colour("black");
+    }
+
+    .app-step-nav__chevron:after {
+      color: $govuk-focus-colour;
+    }
+
+    .app-step-nav____title-text-focus,
+    .app-step-nav__toggle-link-focus {
+      @include govuk-focused-text;
+    }
+
+    .app-step-nav__toggle-link-focus {
+      padding-bottom: 2px;
+    }
   }
 }
 
@@ -95,44 +176,27 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
   width: 100%;
 
   .app-step-nav--large & {
-    @include step-nav-font(19, $tablet-size: 24, $weight: bold, $line-height: 1.4);
+    @include step-nav-font(19, $tablet-size: 24, $weight: bold);
 
     @include govuk-media_query($from: tablet) {
       padding-top: govuk-spacing(2);
     }
   }
-
-  &:focus {
-    box-shadow: 0 -4px govuk-colour("black");
-
-    .app-step-nav__toggle-link {
-      color: govuk-colour("black");
-    }
-
-    @include step-nav-chevron-focus-state;
-  }
 }
 
 .app-step-nav__button--controls {
-  @include step-nav-font(14, $line-height: 1);
-  text-decoration: none; // explicitly overrides old value
-  text-underline-offset: auto; // explicitly overrides old value
+  @include step-nav-font(15);
   position: relative;
   z-index: 1; // this and relative position stops focus outline underlap with border of accordion
-  margin: .5em 0 1.5em;
-  padding: 0 0 govuk-spacing(1);
-
-  &:hover .app-step-nav__button-text {
-    @include govuk-link-decoration;
-    @include govuk-link-hover-decoration;
-  }
+  margin: .5em 0 14px;
+  padding: govuk-spacing(1) 0 govuk-spacing(1);
 
   .app-step-nav--large & {
-    @include step-nav-font(14, $tablet-size: 16, $line-height: 1);
+    @include step-nav-font(15, $tablet-size: 19);
   }
 
   &:focus {
-    @include step-nav-chevron-focus-state;
+    @include govuk-focused-text;
 
     .app-step-nav__button-text {
       text-decoration: none;
@@ -140,32 +204,15 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
   }
 }
 
-.app-step-nav__title-text {
-  display: block;
-  margin-bottom: govuk-spacing(1);
-}
-
-.app-step-nav__chevron {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: govuk-em(5, 14);
-
-  .app-step-nav--large & {
-    margin-left: govuk-em(5, 16);
-  }
-
-  svg {
-    pointer-events: none;
-  }
-}
-
 .app-step-nav__button-text {
   display: inline-block;
   text-align: left;
   min-width: govuk-em(35, 14);
+  margin-left: govuk-spacing(1);
 
   .app-step-nav--large & {
     min-width: govuk-em(40, 16);
+    margin-left: govuk-spacing(1);
   }
 }
 
@@ -234,7 +281,6 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
       &:before {
         margin-left: $number-circle-size-large / 4;
         width: $number-circle-size-large / 2;
-        border-width: $stroke-width; // explicitly overrides old value
       }
 
       &:after {
@@ -280,11 +326,7 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
   border: solid $stroke-width govuk-colour("mid-grey", $legacy: "grey-2");
 
   .app-step-nav--large & {
-    @include step-nav-font(16, $tablet-size: 19, $weight: bold, $line-height: 25px, $tablet-line-height: 34px);
-
-    @include govuk-media-query($from: tablet) {
-      border-width: $stroke-width; // explicitly overrides old value
-    }
+    @include step-nav-font(16, $tablet-size: 19, $weight: bold, $line-height: 29px, $tablet-line-height: 34px);
   }
 
   .app-step-nav__step--active & {
@@ -347,18 +389,6 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
   .app-step-nav--active & {
     cursor: pointer;
   }
-
-  &:hover {
-    .app-step-nav__button:not(:focus),
-    .app-step-nav__circle {
-      color: $govuk-link-colour;
-    }
-
-    .app-step-nav__button-text {
-      @include govuk-link-decoration;
-      @include govuk-link-hover-decoration;
-    }
-  }
 }
 
 .app-step-nav__title {
@@ -372,14 +402,14 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
 }
 
 .app-step-nav__toggle-link {
-  @include step-nav-font(14, $line-height: 1.2);
+  @include step-nav-font(15, $line-height: 1.2);
   display: block;
   color: $govuk-link-colour;
   text-transform: capitalize;
   padding-bottom: govuk-spacing(6);
 
   .app-step-nav--large & {
-    @include step-nav-font(14, $tablet-size: 16, $line-height: 1.2);
+    @include step-nav-font(15, $tablet-size: 19, $line-height: 1.2);
   }
 }
 
@@ -487,7 +517,6 @@ $top-border: solid 1px govuk-colour("mid-grey", $legacy: "grey-3");
       &:before {
         left: -(govuk-spacing(9));
         margin-left: ($number-circle-size-large / 2);
-        height: $stroke-width; // explicitly overrides old value
       }
     }
   }
