@@ -9,6 +9,10 @@
     "type": "git",
     "url": "https://github.com/alphagov/govuk-prototype-kit-step-by-step.git"
   },
+  "scripts": {
+    "start": "npx webpack watch",
+    "build": "npx webpack"
+  },
   "publishConfig": {
     "access": "public",
     "tag": "latest-1"
