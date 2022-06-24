@@ -4,7 +4,10 @@
     "/sass/_step-by-step-nav.scss",
     "/sass/_step-by-step-related.scss"
   ],
+  "assets": [
+    "/dist/main.js.map"
+  ],
   "scripts": [
-    "/javascripts/step-by-step-nav.js"
+    "/dist/main.js"
   ]
 }
