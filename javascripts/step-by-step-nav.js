@@ -1,8 +1,9 @@
 // Based on https://github.com/alphagov/govuk_publishing_components/blob/v22.0.0/app/assets/javascripts/govuk_publishing_components/components/step-by-step-nav.js
 
+const originalNoGlobal = window.noGlobal
 window.noGlobal = true
 const $ = require('jquery')
-delete window.noGlobal
+window.noGlobal = originalNoGlobal
 
 
 window.GOVUK = window.GOVUK || {}
