@@ -1,5 +1,5 @@
 {
-  "name": "govuk-prototype-kit-step-by-step",
+  "name": "@govuk-prototype-kit/step-by-step",
   "version": "3.0.0",
   "description": "GOV.UK Step by Step Pattern for the GOV.UK Prototype Kit",
   "author": "GOV.UK Prototype team, UK Government Digital Service",
@@ -8,5 +8,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/alphagov/govuk-prototype-kit-step-by-step.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
