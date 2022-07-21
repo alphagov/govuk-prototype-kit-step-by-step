@@ -10,6 +10,7 @@
     "url": "https://github.com/alphagov/govuk-prototype-kit-step-by-step.git"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "latest-2"
   }
 }
