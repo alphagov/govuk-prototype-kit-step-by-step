@@ -1,11 +1,15 @@
 // Based on https://github.com/alphagov/govuk_publishing_components/blob/v22.0.0/app/assets/javascripts/govuk_publishing_components/components/step-by-step-nav.js
 
-/* eslint-env jquery */
+const originalNoGlobal = window.noGlobal
+window.noGlobal = true
+const $ = require('jquery')
+window.noGlobal = originalNoGlobal
+
 
 window.GOVUK = window.GOVUK || {}
-window.GOVUK.Modules = window.GOVUK.Modules || {};
+window.GOVUK.Modules = window.GOVUK.Modules || {}
 
-(function (Modules) {
+;(function (Modules, $) {
   'use strict'
 
   Modules.AppStepNav = function () {
@@ -19,6 +23,12 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     var uniqueId
 
     this.start = function ($element) {
+      
+      if ($element.length !== 1 || $element.attr('app-set-nav-init') === 'has-run') {
+        return;
+      }
+      $element.attr('app-set-nav-init', 'has-run')
+      
       // Indicate that js has worked
       $element.addClass('app-step-nav--active')
 
@@ -422,4 +432,9 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       }
     }
   }
-})(window.GOVUK.Modules)
+  
+  var $element = $('#step-by-step-navigation')
+  var stepByStepNavigation = new GOVUK.Modules.AppStepNav()
+  stepByStepNavigation.start($element)
+  
+})(window.GOVUK.Modules, $)
