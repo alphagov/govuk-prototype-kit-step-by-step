@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v2.1.0
+
 ### New feaures
 
 Exposing templates via plugins framework [#6](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/6).
