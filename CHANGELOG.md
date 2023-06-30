@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v2.2.0
+
+### New features
+
+- [#9 - Declare plugin dependency](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/9)
+
 ## v2.1.0
 
 ### New feaures
