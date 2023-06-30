@@ -1,4 +1,7 @@
 {
+  "pluginDependencies": [
+    "govuk-frontend"
+  ],
   "sass": [
     "/sass/_step-by-step-navigation.scss",
     "/sass/_step-by-step-navigation-header.scss",
