@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v2.2.1
+
+### Fixes
+
+- [#11 - Use the earliest supported version for plugin dependency](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/11)
+
 ## v2.2.0
 
 ### New features
