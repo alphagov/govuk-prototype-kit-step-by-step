@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## v2.2.2
+
+### Fixes
+
+- [#13 - Added meta config to be shown on plugin pages](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/13)
+
 ## v2.2.1
 
 ### Fixes
