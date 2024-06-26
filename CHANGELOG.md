@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixes
+
+- [#15 - Remove links to polyfill.io](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/15)
+
 ## v2.2.2
 
 ### Fixes
