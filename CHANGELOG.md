@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixes
+
+- [#17 - Remove instances of `$legacy` param](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/17)
+
 ## v2.2.3
 
 ### Fixes
