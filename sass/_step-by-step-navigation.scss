@@ -4,7 +4,7 @@
 $stroke-width: 1px;
 $number-circle-size: 30px;
 $number-circle-size-large: 35px;
-$top-border: solid 1px govuk-colour("mid-grey");
+$top-border: solid 1px govuk-colour("black", $variant: "tint-80");
 
 @mixin step-nav-vertical-line($line-style: solid) {
   content: "";
@@ -12,7 +12,7 @@ $top-border: solid 1px govuk-colour("mid-grey");
   z-index: 2;
   width: 0;
   height: 100%;
-  border-left: $line-style $stroke-width govuk-colour("mid-grey");
+  border-left: $line-style $stroke-width govuk-colour("black", $variant: "tint-80");
   background: govuk-colour("white");
 }
 
@@ -122,7 +122,7 @@ $top-border: solid 1px govuk-colour("mid-grey");
   margin: 0;
 
   &:hover {
-    background: govuk-colour("light-grey");
+    background: govuk-colour("black", $variant: "tint-95");
     // Chevron icon interaction states
     .app-step-nav__chevron {
       color: govuk-colour("black");
@@ -130,7 +130,7 @@ $top-border: solid 1px govuk-colour("mid-grey");
     }
 
     .app-step-nav__chevron:after {
-      color: govuk-colour("light-grey");
+      color: govuk-colour("black", $variant: "tint-95");
     }
 
     .app-step-nav__button-text {
@@ -264,7 +264,7 @@ $top-border: solid 1px govuk-colour("mid-grey");
     margin-left: $number-circle-size / 4;
     width: $number-circle-size / 2;
     height: 0;
-    border-bottom: solid $stroke-width govuk-colour("mid-grey");
+    border-bottom: solid $stroke-width govuk-colour("black", $variant: "tint-80");
   }
 
   &:after {
@@ -323,7 +323,7 @@ $top-border: solid 1px govuk-colour("mid-grey");
 
 .app-step-nav__circle--number {
   @include step-nav-font(16, $weight: bold, $line-height: 29px);
-  border: solid $stroke-width govuk-colour("mid-grey");
+  border: solid $stroke-width govuk-colour("black", $variant: "tint-80");
 
   .app-step-nav--large & {
     @include step-nav-font(16, $tablet-size: 19, $weight: bold, $line-height: 29px, $tablet-line-height: 34px);
@@ -529,7 +529,7 @@ $top-border: solid 1px govuk-colour("mid-grey");
 .app-step-nav__context {
   display: inline-block;
   font-weight: normal;
-  color: govuk-colour("dark-grey");
+  color: govuk-colour("black", $variant: "tint-25");
 
   &:before {
     content: " \2013\00a0"; // dash followed by &nbsp;
