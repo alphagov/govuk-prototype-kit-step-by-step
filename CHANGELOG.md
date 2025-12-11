@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Fixes
+
+- [#26 - Update templates to extend local template instead of prototype kit template](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/26)
+
 ## v2.2.4
 
 ### Fixes
