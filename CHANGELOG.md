@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Breaking changes
+
+- [#27 - Support GOV.UK Frontend v6.0](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/27)
+
 ### Fixes
 
 - [#26 - Update templates to extend local template instead of prototype kit template](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/26)
