@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## v3.0.0
+
 ### Breaking changes
 
 - [#27 - Support GOV.UK Frontend v6.0](https://github.com/alphagov/govuk-prototype-kit-step-by-step/pull/27)
