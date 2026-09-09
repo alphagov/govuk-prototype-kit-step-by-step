@@ -4,4 +4,4 @@ This plugin provides the code to use the GOV.UK Step by step pattern in prototyp
 
 For more information about the GOV.UK Prototype kit:
 
-https://govuk-prototype-kit.herokuapp.com/docs
+https://prototype-kit.service.gov.uk/
