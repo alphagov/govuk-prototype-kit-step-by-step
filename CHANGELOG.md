@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## v3.1.0-test.0 (Test release)
+
+> [!WARNING]
+> This is a prerelease. Do not publish prototypes using this version.
+> Use this release to prepare for the changes coming in version `3.1.0`.
+
+To install this version in a prototype, navigate to your prototype folder in a terminal and run:
+
+`npm install @govuk-prototype-kit/step-by-step@3.1.0-test.0`
+
+
 ## v3.0.0
 
 ### Breaking changes

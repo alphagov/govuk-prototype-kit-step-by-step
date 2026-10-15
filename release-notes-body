@@ -1,0 +1,11 @@
+
+> [!WARNING]
+> This is a prerelease. Do not publish prototypes using this version.
+> Use this release to prepare for the changes coming in version `3.1.0`.
+
+To install this version in a prototype, navigate to your prototype folder in a terminal and run:
+
+`npm install @govuk-prototype-kit/step-by-step@3.1.0-test.0`
+
+
+Pull request generated on behalf of @romaricpascal by [run 38766942367](https://github.com/alphagov/govuk-prototype-kit-step-by-step/actions/runs/38766942367) of the [Build release workflow](https://github.com/alphagov/govuk-prototype-kit-step-by-step/actions/workflows/build-release.yml)
